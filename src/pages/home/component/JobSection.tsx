@@ -4,21 +4,22 @@ import { useEffect, useState } from "react";
 
 function JobSection() {
   const [jobs, setJobs] = useState<Job[]>([]);
-  
-  useEffect(() =>{   //can get server data
-    const fetchjobs = async ()=>{
-      const res =await fetch("http://localhost:8000/jobs",{
-        method: "GET",
-      });
+
+  useEffect(() => {
+    //can get server data
+    const fetchjobs = async () => {
+      const res = await fetch(
+        "https://smarthireprotal-back-end-production.up.railway.app/jobs",
+        {
+          method: "GET",
+        }
+      );
       const data: Job[] = await res.json();
       return data;
-      
     };
-    
-    fetchjobs().then((newData)=> setJobs(newData));  //promise of fetchjob
-      
 
-  },[]);
+    fetchjobs().then((newData) => setJobs(newData)); //promise of fetchjob
+  }, []);
 
   return (
     <section className="py-8">
