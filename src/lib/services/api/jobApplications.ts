@@ -4,7 +4,7 @@ import { JobApplication } from '@/types/jobApplication';
 export const getJobApllicationsForJob = async (id: string) => {
   
 
-  const url = `https://smarthireprotal-back-end-production.up.railway.app/jobApplications?/jobId=${id}`;
+  const url = `http://smarthireprotal-back-end-production.up.railway.app/jobApplications?/jobId=${id}`;
   const token = await window.Clerk.session.getToken();
   
   const res = await fetch(url, {
@@ -23,7 +23,7 @@ export const getJobApplicationById = async (id: string) => {
   const token = await window.Clerk.session.getToken();
 
   const res = await fetch(
-    `https://smarthireprotal-back-end-production.up.railway.app/jobApplications/${id}`,
+    `http://smarthireprotal-back-end-production.up.railway.app/jobApplications/${id}`,
     {
       method: "GET",
       headers: {
@@ -41,18 +41,17 @@ export const createJobApplication = async ({
   fullName,
   job,
   answers,
-  cv,
 }: {
   userId: string;
   fullName: string;
   job: string;
   answers: string[];
-  cv: File | null;
+  
 }) => {
   const token = await window.Clerk.session.getToken();
 
   await fetch(
-    "https://smarthireprotal-back-end-production.up.railway.app/jobApplications",
+    "http://smarthireprotal-back-end-production.up.railway.app/jobApplications",
     {
       method: "POST",
       headers: {
@@ -64,7 +63,7 @@ export const createJobApplication = async ({
         fullName: fullName,
         job,
         answers,
-        cv
+      
       }),
     }
   );
