@@ -4,7 +4,7 @@ import { JobApplication } from '@/types/jobApplication';
 export const getJobApllicationsForJob = async (id: string) => {
   
 
-  const url = `http://smarthireprotal-back-end-production.up.railway.app/jobApplications?/jobId=${id}`;
+  const url = `https://smarthireprotal-back-end-production.up.railway.app/jobApplications?/jobId=${id}`;
   const token = await window.Clerk.session.getToken();
   
   const res = await fetch(url, {
@@ -23,7 +23,7 @@ export const getJobApplicationById = async (id: string) => {
   const token = await window.Clerk.session.getToken();
 
   const res = await fetch(
-    `http://smarthireprotal-back-end-production.up.railway.app/jobApplications/${id}`,
+    `https://smarthireprotal-back-end-production.up.railway.app/jobApplications/${id}`,
     {
       method: "GET",
       headers: {
@@ -51,7 +51,7 @@ export const createJobApplication = async ({
   const token = await window.Clerk.session.getToken();
 
   await fetch(
-    "http://smarthireprotal-back-end-production.up.railway.app/jobApplications",
+    "https://smarthireprotal-back-end-production.up.railway.app/jobApplications",
     {
       method: "POST",
       headers: {

@@ -9,7 +9,7 @@ function JobSection() {
     //can get server data
     const fetchjobs = async () => {
       const res = await fetch(
-        "http://smarthireprotal-back-end-production.up.railway.app/jobs",
+        "https://smarthireprotal-back-end-production.up.railway.app/jobs",
         {
           method: "GET",
         }
