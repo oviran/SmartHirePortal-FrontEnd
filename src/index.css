@@ -48,16 +48,12 @@
   }
 
   .hero {
-    background: url("/1.png");
+    background: url("/hero-1.png");
     background-position: center;
     background-size: cover;
   }
 
-  .Hero {
-    position: absolute;
-    right: 3;
-    top: 0;
-  }
+
   
 }
 
