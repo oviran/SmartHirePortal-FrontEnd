@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <MainLayout />,
         children: [
           {
-            path: "/",
+            path: "/home",
             element: <HomePage />,
           },
           {
