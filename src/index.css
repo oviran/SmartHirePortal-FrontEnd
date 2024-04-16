@@ -48,7 +48,7 @@
   }
 
   .hero {
-    background: url("1.png");
+    background: url("/1.png");
     background-position: center;
     background-size: cover;
   }
